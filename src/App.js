@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import CounterApp from './Components/CounterApp';
+import Timer from './Components/Timer';
+import { BrowserRouter as Router ,Route,Routes, Link } from 'react-router-dom';
+import ApiRequest from './Components/ApiRequest';
+import Api from './Components/Api';
+import Project from './Components2/Project';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+   <Router>
+    
+      <div className="App">
+      <Routes>
+      <Route path='counter' element={<CounterApp/>}></Route>
+      <Route path='timer' element={<Timer/>}></Route>
+      <Route path='api' element={<ApiRequest/>}></Route>
+      <Route path='api2' element={<Api/>}></Route>
+      <Route path='project' element={<Project/>}></Route>
+    </Routes>
+      </div>
+    </Router>
+
+    </>
+    
   );
 }
 
 export default App;
+
